@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		445AC3F5271FC3E6007E8397 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445AC3F4271FC3E6007E8397 /* HomeScreen.swift */; };
 		44B18F68271FA5EF0061DD54 /* NextStepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B18F67271FA5EF0061DD54 /* NextStepApp.swift */; };
 		44B18F6A271FA5EF0061DD54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B18F69271FA5EF0061DD54 /* ContentView.swift */; };
 		44B18F6C271FA5F00061DD54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44B18F6B271FA5F00061DD54 /* Assets.xcassets */; };
@@ -15,6 +16,9 @@
 		44B18F74271FA5F00061DD54 /* NextStep.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 44B18F72271FA5F00061DD54 /* NextStep.xcdatamodeld */; };
 		44B18F7F271FA5F00061DD54 /* NextStepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B18F7E271FA5F00061DD54 /* NextStepTests.swift */; };
 		44B18F8A271FA5F00061DD54 /* NextStepUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B18F89271FA5F00061DD54 /* NextStepUITests.swift */; };
+		44F63906271FE27A00518175 /* DetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F63905271FE27A00518175 /* DetailsScreen.swift */; };
+		44F63908271FED7700518175 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F63907271FED7700518175 /* ProfileScreen.swift */; };
+		44F6390A271FEDAC00518175 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F63909271FEDAC00518175 /* SettingsScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		445AC3F4271FC3E6007E8397 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		44B18F64271FA5EF0061DD54 /* NextStep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextStep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44B18F67271FA5EF0061DD54 /* NextStepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStepApp.swift; sourceTree = "<group>"; };
 		44B18F69271FA5EF0061DD54 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +54,9 @@
 		44B18F85271FA5F00061DD54 /* NextStepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NextStepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44B18F89271FA5F00061DD54 /* NextStepUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStepUITests.swift; sourceTree = "<group>"; };
 		44B18F8B271FA5F00061DD54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44F63905271FE27A00518175 /* DetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreen.swift; sourceTree = "<group>"; };
+		44F63907271FED7700518175 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		44F63909271FEDAC00518175 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +84,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		445AC3F3271FC3D1007E8397 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				44B18F69271FA5EF0061DD54 /* ContentView.swift */,
+				44F63907271FED7700518175 /* ProfileScreen.swift */,
+				44F63909271FEDAC00518175 /* SettingsScreen.swift */,
+				445AC3F4271FC3E6007E8397 /* HomeScreen.swift */,
+				44F63905271FE27A00518175 /* DetailsScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		44B18F5B271FA5EF0061DD54 = {
 			isa = PBXGroup;
 			children = (
@@ -99,8 +119,8 @@
 		44B18F66271FA5EF0061DD54 /* NextStep */ = {
 			isa = PBXGroup;
 			children = (
+				445AC3F3271FC3D1007E8397 /* Screens */,
 				44B18F67271FA5EF0061DD54 /* NextStepApp.swift */,
-				44B18F69271FA5EF0061DD54 /* ContentView.swift */,
 				44B18F6B271FA5F00061DD54 /* Assets.xcassets */,
 				44B18F70271FA5F00061DD54 /* Persistence.swift */,
 				44B18F75271FA5F00061DD54 /* Info.plist */,
@@ -265,7 +285,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44F6390A271FEDAC00518175 /* SettingsScreen.swift in Sources */,
 				44B18F74271FA5F00061DD54 /* NextStep.xcdatamodeld in Sources */,
+				44F63908271FED7700518175 /* ProfileScreen.swift in Sources */,
+				445AC3F5271FC3E6007E8397 /* HomeScreen.swift in Sources */,
+				44F63906271FE27A00518175 /* DetailsScreen.swift in Sources */,
 				44B18F71271FA5F00061DD54 /* Persistence.swift in Sources */,
 				44B18F6A271FA5EF0061DD54 /* ContentView.swift in Sources */,
 				44B18F68271FA5EF0061DD54 /* NextStepApp.swift in Sources */,
