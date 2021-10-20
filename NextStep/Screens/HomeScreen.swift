@@ -58,7 +58,7 @@ struct HomeScreen: View {
         
         VStack {
             VStack {
-                NavigationLink(destination: DetailsScreen(title: "STEPS")) {
+                NavigationLink(destination: DetailsScreen(title: "Steps", primary_colour: "steps-primary", secondary_colour: "steps-secondary")) {
                     CardLarge(
                         iconName: "figure.walk",
                         title: "STEPS",
@@ -71,7 +71,7 @@ struct HomeScreen: View {
                 }
                 .buttonStyle(.plain)
                 
-                NavigationLink(destination: DetailsScreen(title: "ENERGY BURN")) {
+                NavigationLink(destination: DetailsScreen(title: "Energy Burn", primary_colour: "energy-burn-primary", secondary_colour: "energy-burn-secondary")) {
                     CardLarge(
                         iconName: "flame.fill",
                         title: "ENERGY BURN",
@@ -86,7 +86,7 @@ struct HomeScreen: View {
             }
             
             HStack {
-                NavigationLink(destination: DetailsScreen(title: "DISTANCE")) {
+                NavigationLink(destination: DetailsScreen(title: "Distance", primary_colour: "distance-primary", secondary_colour: "distance-secondary")) {
                     CardSmall(
                         iconName: "ruler",
                         title: "DISTANCE",
@@ -99,7 +99,7 @@ struct HomeScreen: View {
                 }
                 .buttonStyle(.plain)
                 
-                NavigationLink(destination: DetailsScreen(title: "AVERAGE PACE")) {
+                NavigationLink(destination: DetailsScreen(title: "Average Pace", primary_colour: "average-pace-primary", secondary_colour: "average-pace-secondary")) {
                     CardSmall(
                         iconName: "stopwatch",
                         title: "AVG. PACE",

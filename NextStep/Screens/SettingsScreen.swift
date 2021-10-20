@@ -11,8 +11,16 @@ import SwiftUI
 struct SettingsScreen: View {
     
     var body: some View {
-        ZStack {
-            Text("Settings")
+        VStack {
+            Form {
+                Section(header: Text("Display")) {
+                    
+                    Toggle(isOn: .constant(true),
+                           label: {
+                        Text("Dark Mode")
+                    })
+                }
+            }
         }
         .navigationTitle("Settings")
     }

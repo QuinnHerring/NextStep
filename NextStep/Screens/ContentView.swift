@@ -21,7 +21,7 @@ struct ContentView: View {
     @State var selectedIndex = 0
     
     let icons = [
-        "heart.text.square.fill",
+        "figure.walk",
         "person.fill",
         "gear",
     ]
@@ -55,7 +55,7 @@ struct ContentView: View {
                     }, label: {
                         
                         Image(systemName: icons[number])
-                            .font(.system(size: 25, weight: .regular, design: .default))
+                            .font(.system(size: 30, weight: .regular, design: .default))
                             .foregroundColor(selectedIndex == number ? Color("base") : Color(UIColor.lightGray))
                     }).padding()
                     Spacer()

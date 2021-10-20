@@ -11,6 +11,8 @@ import SwiftUI
 struct DetailsScreen: View {
     
     var title: String
+    var primary_colour: String
+    var secondary_colour: String
     
     @State private var timePeriodType = 0
     
@@ -23,6 +25,7 @@ struct DetailsScreen: View {
                 Text("Annually").tag(2)
             }
             .pickerStyle(.segmented)
+            
             
         }
         .navigationTitle(title)
