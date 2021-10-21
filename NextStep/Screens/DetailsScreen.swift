@@ -7,29 +7,140 @@
 
 import Foundation
 import SwiftUI
+import CoreMotion
 
 struct DetailsScreen: View {
     
     var title: String
+    var iconName: String
+    var secondary_title: String
     var primary_colour: String
     var secondary_colour: String
-    
-    @State private var timePeriodType = 0
+    var startDate_today : String
+    var startDate_week : String
+    var endDate_week: String
+    var value_today: String
+    var value_week: String
+
+    @State private var timePeriodType: TimePeriodType = .today
     
     var body: some View {
         
         VStack {
-            Picker("What is your favorite color?", selection: $timePeriodType) {
-                Text("Daily").tag(0)
-                Text("Weekly").tag(1)
-                Text("Annually").tag(2)
+            Picker("", selection: $timePeriodType) {
+                ForEach(TimePeriodType.allCases, id: \.self) {
+                    Text($0.rawValue)
+                }
+            }
+            .onAppear{
+                UISegmentedControl.appearance().selectedSegmentTintColor =  UIColor.init(Color(primary_colour))
             }
             .pickerStyle(.segmented)
             
             
+            VStack {
+                    
+                switch timePeriodType {
+                case .today:
+                    
+                    Text("Today")
+                        .font(.system(size: 20))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color("base"))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(EdgeInsets(top: 15, leading: 10, bottom: 0, trailing: 0))
+                    
+                    HStack {
+                        Text(" ")
+                        Text(startDate_today)
+                            .font(.system(size: 18))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .foregroundColor(Color(primary_colour))
+                        Text(" ")
+                    }.padding(EdgeInsets(top: 1, leading: 0, bottom: 0, trailing: 0))
+                    
+                    Divider()
+                    
+                    Text(secondary_title)
+                        .font(.system(size: 20))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color("base"))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 0))
+                    
+                    Text(value_today)
+                        .font(.system(size: 50))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(primary_colour))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
+                    
+                    Divider()
+                    
+                    Image(systemName: iconName)
+                        .font(.system(size: 150))
+                        .foregroundColor(Color(primary_colour))
+                        .padding(.top, 50.0)
+                    
+                case .week:
+                    
+                    Text("Between")
+                        .font(.system(size: 20))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color("base"))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(EdgeInsets(top: 15, leading: 10, bottom: 0, trailing: 0))
+                    
+                    HStack {
+                        Text(startDate_week)
+                            .font(.system(size: 18))
+                            .foregroundColor(Color(primary_colour))
+                        
+                        Text(" - ")
+                            .font(.system(size: 18))
+                            .foregroundColor(Color(primary_colour))
+                        
+                        Text(endDate_week)
+                            .font(.system(size: 18))
+                            .foregroundColor(Color(primary_colour))
+                    }
+                    .padding(EdgeInsets(top: 1, leading: 10, bottom: 0, trailing: 0))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    Divider()
+                    
+                    Text(secondary_title)
+                        .font(.system(size: 20))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color("base"))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 0))
+                    
+                    Text(value_week)
+                        .font(.system(size: 50))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(primary_colour))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
+                   
+                    Divider()
+                    
+                    Image(systemName: iconName)
+                        .font(.system(size: 150))
+                        .foregroundColor(Color(primary_colour))
+                        .padding(.top, 50.0)
+                }
+            }
+            Spacer()
         }
+        .padding()
         .navigationTitle(title)
         
     }
     
+}
+
+enum TimePeriodType: String, CaseIterable {
+    case today = "Today"
+    case week = "Past Week"
 }

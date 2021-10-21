@@ -7,62 +7,125 @@
 
 import Foundation
 import SwiftUI
+import UIKit
 import CoreMotion
 
 struct HomeScreen: View {
     
+    // MODEL
     private let pedometer: CMPedometer = CMPedometer()
     
-    @State private var steps: Int?
-    @State private var distance: Double?
-    @State private var averagePace: Double?
+    // Today's data
+    @State var data_today: CMPedometerData?
+    @State var steps_today: Int?
+    @State var distance_today: Double?
+    @State var averagePace_today: Double?
+    @State var start_today: String?
     
-    private var isPedometerAvailable: Bool {
-        return CMPedometer.isPedometerEventTrackingAvailable() && CMPedometer.isDistanceAvailable() && CMPedometer.isStepCountingAvailable()
-    }
+    // Past week's data
+    @State var data_week: CMPedometerData?
+    @State var steps_week: Int?
+    @State var distance_week: Double?
+    @State var averagePace_week: Double?
+    @State var start_week: String?
+    @State var end_week: String?
     
-    
-    private func updateUI(data: CMPedometerData) {
-        
-        steps = data.numberOfSteps.intValue
-        guard let pedometerDistance = data.distance else { return }
-        
-        let distanceInMeter = Measurement(value: pedometerDistance.doubleValue, unit: UnitLength.meters)
-        
-        distance = distanceInMeter.converted(to: .kilometers).value
-        
-        averagePace = data.averageActivePace?.doubleValue
-    }
+    static let taskDateFormat: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter
+    }()
     
     private func initializePedometer() {
         
         if isPedometerAvailable {
+        
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .long
+            dateFormatter.timeStyle = .none
             
-            guard let startDate = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+            let calendar = Calendar.current
+            
+            // Query for today's data
+            pedometer.queryPedometerData(from: calendar.startOfDay(for: Date()), to: Date()) { (data, error) in
+               
+                
+                guard let data = data, error == nil else { return }
+                updateUI_today(data: data)
+                
+                start_today = dateFormatter.string(from: calendar.startOfDay(for: Date()))
+            }
+            
+            guard let startDate = calendar.date(byAdding: .day, value: -7, to: Date())
             else {
                 return
             }
-            
+
+            // Query for past week's data
             pedometer.queryPedometerData(from: startDate, to: Date()) { (data, error) in
                
                 guard let data = data, error == nil else { return }
+                updateUI_week(data: data)
                 
-                updateUI(data: data)
+                start_week = dateFormatter.string(from: startDate)
+                end_week = dateFormatter.string(from: Date())
                 
             }
         }
     }
     
+    var isPedometerAvailable: Bool {
+        return CMPedometer.isPedometerEventTrackingAvailable() && CMPedometer.isDistanceAvailable() && CMPedometer.isStepCountingAvailable()
+    }
     
+    // CONTROLLER
+    
+    // Update UI for today's data
+    private func updateUI_today(data: CMPedometerData) {
+        
+        guard let pedometerDistance = data.distance else { return }
+        let distanceInMeter = Measurement(value: pedometerDistance.doubleValue, unit: UnitLength.meters)
+        
+        steps_today = data.numberOfSteps.intValue
+        distance_today = distanceInMeter.converted(to: .kilometers).value
+        averagePace_today = data.averageActivePace?.doubleValue
+        data_today = data
+    }
+    
+    
+    // Update UI for past week's data
+    private func updateUI_week(data: CMPedometerData) {
+        
+        guard let pedometerDistance = data.distance else { return }
+        let distanceInMeter = Measurement(value: pedometerDistance.doubleValue, unit: UnitLength.meters)
+        
+        steps_week = data.numberOfSteps.intValue
+        distance_week = distanceInMeter.converted(to: .kilometers).value
+        averagePace_week = data.averageActivePace?.doubleValue
+        data_week = data
+    }
+    
+    // VIEW
     var body: some View {
         
         VStack {
             VStack {
-                NavigationLink(destination: DetailsScreen(title: "Steps", primary_colour: "steps-primary", secondary_colour: "steps-secondary")) {
+
+                NavigationLink(destination: DetailsScreen(
+                        title: "Steps",
+                        iconName: "figure.walk",
+                        secondary_title: "Steps Taken",
+                        primary_colour: "steps-primary",
+                        secondary_colour: "steps-secondary",
+                        startDate_today: start_today ?? "No Date",
+                        startDate_week: start_week ?? "No Date",
+                        endDate_week: end_week ?? "No Date",
+                        value_today: steps_today != nil ? "\(steps_today!)" : "0",
+                        value_week: steps_week != nil ? "\(steps_week!)" : "0")) {
                     CardLarge(
                         iconName: "figure.walk",
                         title: "STEPS",
-                        description: steps != nil ? "\(steps!)" : "0",
+                        description: steps_today != nil ? "\(steps_today!)" : "0",
                         primary_colour: "steps-primary",
                         secondary_colour: "steps-secondary",
                         iconSize: 100
@@ -71,7 +134,17 @@ struct HomeScreen: View {
                 }
                 .buttonStyle(.plain)
                 
-                NavigationLink(destination: DetailsScreen(title: "Energy Burn", primary_colour: "energy-burn-primary", secondary_colour: "energy-burn-secondary")) {
+                NavigationLink(destination: DetailsScreen(
+                        title: "Energy Burn",
+                        iconName: "flame.fill",
+                        secondary_title: "Energy Burned",
+                        primary_colour: "energy-burn-primary",
+                        secondary_colour: "energy-burn-secondary",
+                        startDate_today: start_today ?? "No Date",
+                        startDate_week: start_week ?? "No Date",
+                        endDate_week: end_week ?? "No Date",
+                        value_today: "0",
+                        value_week: "0")) {
                     CardLarge(
                         iconName: "flame.fill",
                         title: "ENERGY BURN",
@@ -86,11 +159,21 @@ struct HomeScreen: View {
             }
             
             HStack {
-                NavigationLink(destination: DetailsScreen(title: "Distance", primary_colour: "distance-primary", secondary_colour: "distance-secondary")) {
+                NavigationLink(destination: DetailsScreen(
+                        title: "Distance",
+                        iconName: "ruler",
+                        secondary_title: "Distance Travelled",
+                        primary_colour: "distance-primary",
+                        secondary_colour: "distance-secondary",
+                        startDate_today: start_today ?? "No Date",
+                        startDate_week: start_week ?? "No Date",
+                        endDate_week: end_week ?? "No Date",
+                        value_today: distance_today != nil ? String(format: "%.2f km", distance_today!) : "0.0 km",
+                        value_week: distance_week != nil ? String(format: "%.2f km", distance_week!) : "0.0 km")) {
                     CardSmall(
                         iconName: "ruler",
                         title: "DISTANCE",
-                        description: distance != nil ? String(format: "%.2f km", distance!) : "0.0 km",
+                        description: distance_today != nil ? String(format: "%.2f km", distance_today!) : "0.0 km",
                         primary_colour: "distance-primary",
                         secondary_colour: "distance-secondary",
                         iconSize: 50
@@ -99,11 +182,21 @@ struct HomeScreen: View {
                 }
                 .buttonStyle(.plain)
                 
-                NavigationLink(destination: DetailsScreen(title: "Average Pace", primary_colour: "average-pace-primary", secondary_colour: "average-pace-secondary")) {
+                NavigationLink(destination: DetailsScreen(
+                        title: "Average Pace",
+                        iconName: "stopwatch",
+                        secondary_title: "Average Pace",
+                        primary_colour: "average-pace-primary",
+                        secondary_colour: "average-pace-secondary",
+                        startDate_today: start_today ?? "No Date",
+                        startDate_week: start_week ?? "No Date",
+                        endDate_week: end_week ?? "No Date",
+                        value_today: averagePace_today != nil ? String(format: "%.2f m/s", averagePace_today!) : "0.0 m/s",
+                        value_week: averagePace_week != nil ? String(format: "%.2f m/s", averagePace_week!) : "0.0 m/s")) {
                     CardSmall(
                         iconName: "stopwatch",
                         title: "AVG. PACE",
-                        description: averagePace != nil ? String(format: "%.2f m/s", averagePace!) : "0.0 m/s",
+                        description: averagePace_today != nil ? String(format: "%.2f m/s", averagePace_today!) : "0.0 m/s",
                         primary_colour: "average-pace-primary",
                         secondary_colour: "average-pace-secondary",
                         iconSize: 50
@@ -112,7 +205,6 @@ struct HomeScreen: View {
                 }
                 .buttonStyle(.plain)
             }
-            
             .onAppear {
                 initializePedometer()
             }
@@ -162,7 +254,6 @@ struct CardLarge: View {
         .padding(10)
         .background(Color(primary_colour))
         .cornerRadius(20)
-        .shadow(color: Color(primary_colour).opacity(0.4), radius: 5, x: 0, y: 5)
     }
 }
 
@@ -210,7 +301,6 @@ struct CardSmall: View {
         .padding(10)
         .background(Color(primary_colour))
         .cornerRadius(20)
-        .shadow(color: Color(primary_colour).opacity(0.4), radius: 5, x: 0, y: 5)
     }
 }
 

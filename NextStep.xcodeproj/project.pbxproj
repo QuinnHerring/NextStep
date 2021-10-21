@@ -19,6 +19,7 @@
 		44F63906271FE27A00518175 /* DetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F63905271FE27A00518175 /* DetailsScreen.swift */; };
 		44F63908271FED7700518175 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F63907271FED7700518175 /* ProfileScreen.swift */; };
 		44F6390A271FEDAC00518175 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F63909271FEDAC00518175 /* SettingsScreen.swift */; };
+		44F6390D2720F0D700518175 /* PedometerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F6390C2720F0D700518175 /* PedometerModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		44F63905271FE27A00518175 /* DetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreen.swift; sourceTree = "<group>"; };
 		44F63907271FED7700518175 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		44F63909271FEDAC00518175 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
+		44F6390C2720F0D700518175 /* PedometerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		44B18F66271FA5EF0061DD54 /* NextStep */ = {
 			isa = PBXGroup;
 			children = (
+				44F6390B2720F0BA00518175 /* Models */,
 				445AC3F3271FC3D1007E8397 /* Screens */,
 				44B18F67271FA5EF0061DD54 /* NextStepApp.swift */,
 				44B18F6B271FA5F00061DD54 /* Assets.xcassets */,
@@ -154,6 +157,14 @@
 				44B18F8B271FA5F00061DD54 /* Info.plist */,
 			);
 			path = NextStepUITests;
+			sourceTree = "<group>";
+		};
+		44F6390B2720F0BA00518175 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				44F6390C2720F0D700518175 /* PedometerModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44F6390D2720F0D700518175 /* PedometerModel.swift in Sources */,
 				44F6390A271FEDAC00518175 /* SettingsScreen.swift in Sources */,
 				44B18F74271FA5F00061DD54 /* NextStep.xcdatamodeld in Sources */,
 				44F63908271FED7700518175 /* ProfileScreen.swift in Sources */,
@@ -454,7 +466,7 @@
 				DEVELOPMENT_TEAM = 7YL2NR9SHB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NextStep/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -476,7 +488,7 @@
 				DEVELOPMENT_TEAM = 7YL2NR9SHB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NextStep/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

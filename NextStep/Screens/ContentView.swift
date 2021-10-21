@@ -14,6 +14,7 @@ struct ContentView: View {
         UINavigationBar.appearance().largeTitleTextAttributes = [
             .foregroundColor: UIColor.init(Color("base"))
         ]
+        
     }
     
     @AppStorage("isDarkMode") private var isDarkMode = false
@@ -62,7 +63,7 @@ struct ContentView: View {
                 }
             }
             .padding(0.0)
-        }
+        }.ignoresSafeArea(.keyboard)
         }
 }
 
