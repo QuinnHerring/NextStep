@@ -10,15 +10,14 @@ import SwiftUI
 
 struct SettingsScreen: View {
     
+    @AppStorage("isDarkMode") private var isDarkMode = false
+    
     var body: some View {
         VStack {
             Form {
                 Section(header: Text("Display")) {
                     
-                    Toggle(isOn: .constant(true),
-                           label: {
-                        Text("Dark Mode")
-                    })
+                    Toggle("Dark Mode", isOn: $isDarkMode)
                 }
             }
         }

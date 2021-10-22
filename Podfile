@@ -7,6 +7,7 @@ target 'NextStep' do
 
   # Pods for NextStep
   pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
 
   target 'NextStepTests' do
     inherit! :search_paths

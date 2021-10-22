@@ -18,6 +18,7 @@ struct HomeScreen: View {
     // Today's data
     @State var data_today: CMPedometerData?
     @State var steps_today: Int?
+    @State var energy_burn_today: Double?
     @State var distance_today: Double?
     @State var averagePace_today: Double?
     @State var start_today: String?
@@ -25,6 +26,7 @@ struct HomeScreen: View {
     // Past week's data
     @State var data_week: CMPedometerData?
     @State var steps_week: Int?
+    @State var energy_burn_week: Double?
     @State var distance_week: Double?
     @State var averagePace_week: Double?
     @State var start_week: String?
@@ -87,6 +89,7 @@ struct HomeScreen: View {
         let distanceInMeter = Measurement(value: pedometerDistance.doubleValue, unit: UnitLength.meters)
         
         steps_today = data.numberOfSteps.intValue
+        energy_burn_today = Double(data.numberOfSteps.intValue) * 0.04
         distance_today = distanceInMeter.converted(to: .kilometers).value
         averagePace_today = data.averageActivePace?.doubleValue
         data_today = data
@@ -100,6 +103,7 @@ struct HomeScreen: View {
         let distanceInMeter = Measurement(value: pedometerDistance.doubleValue, unit: UnitLength.meters)
         
         steps_week = data.numberOfSteps.intValue
+        energy_burn_week = Double(data.numberOfSteps.intValue) * 0.04
         distance_week = distanceInMeter.converted(to: .kilometers).value
         averagePace_week = data.averageActivePace?.doubleValue
         data_week = data
@@ -142,12 +146,12 @@ struct HomeScreen: View {
                         startDate_today: start_today ?? "No Date",
                         startDate_week: start_week ?? "No Date",
                         endDate_week: end_week ?? "No Date",
-                        value_today: "0",
-                        value_week: "0")) {
+                        value_today: energy_burn_today != nil ? String(format: "%.1f k/cal", energy_burn_today!) : "0 k/cal",
+                        value_week: energy_burn_week != nil ? String(format: "%.1f k/cal", energy_burn_week!) : "0 k/cal")) {
                     CardLarge(
                         iconName: "flame.fill",
                         title: "ENERGY BURN",
-                        description: "0 k/cal",
+                        description: energy_burn_today != nil ? String(format: "%.1f k/cal", energy_burn_today!) : "0 k/cal",
                         primary_colour: "energy-burn-primary",
                         secondary_colour: "energy-burn-secondary",
                         iconSize: 100
@@ -233,7 +237,7 @@ struct CardLarge: View {
                             .fontWeight(.black)
                             .foregroundColor(Color(secondary_colour))
                         Text(description)
-                            .font(.system(size: 40))
+                            .font(.system(size: 30))
                             .fontWeight(.bold)
                             .foregroundColor(Color.white)
                     }.padding(10)

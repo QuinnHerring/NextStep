@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @AppStorage("isDarkMode") private var isDarkMode = false
+    
     init() {
             //Use this if NavigationBarTitle is with Large Font
         UINavigationBar.appearance().largeTitleTextAttributes = [
@@ -16,8 +18,6 @@ struct ContentView: View {
         ]
         
     }
-    
-    @AppStorage("isDarkMode") private var isDarkMode = false
 
     @State var selectedIndex = 0
     
@@ -64,6 +64,7 @@ struct ContentView: View {
             }
             .padding(0.0)
         }.ignoresSafeArea(.keyboard)
+        .preferredColorScheme(isDarkMode ? .dark : .light)
         }
 }
 
@@ -72,7 +73,7 @@ struct ContentView_Previews: PreviewProvider {
     @AppStorage("isDarkMode") static var isDarkMode = false
     
     static var previews: some View {
-        ContentView().preferredColorScheme(isDarkMode ? .dark : .light)
+        ContentView()
             
     }
 }

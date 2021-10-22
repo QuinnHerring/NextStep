@@ -11,6 +11,7 @@ import UIKit
 
 @main
 struct NextStepApp: App {
+    
     let persistenceController = PersistenceController.shared
 
     // Create a reference to the App Delegate
