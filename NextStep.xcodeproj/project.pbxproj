@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D5C20227767FF70DCA4058D /* Pods_NextStep_NextStepUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8058DEA4D9DA66087C6733E3 /* Pods_NextStep_NextStepUITests.framework */; };
+		2C2BE9F2ED15CA8E61A20BCA /* Pods_NextStepTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6943502D6CC15EF38712F8 /* Pods_NextStepTests.framework */; };
 		445AC3F5271FC3E6007E8397 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445AC3F4271FC3E6007E8397 /* HomeScreen.swift */; };
 		44B18F68271FA5EF0061DD54 /* NextStepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B18F67271FA5EF0061DD54 /* NextStepApp.swift */; };
 		44B18F6A271FA5EF0061DD54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B18F69271FA5EF0061DD54 /* ContentView.swift */; };
@@ -20,6 +22,8 @@
 		44F63908271FED7700518175 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F63907271FED7700518175 /* ProfileScreen.swift */; };
 		44F6390A271FEDAC00518175 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F63909271FEDAC00518175 /* SettingsScreen.swift */; };
 		44F6390D2720F0D700518175 /* PedometerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F6390C2720F0D700518175 /* PedometerModel.swift */; };
+		44F6390F27223E9600518175 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44F6390E27223E9500518175 /* GoogleService-Info.plist */; };
+		DF1B7BFB7EE496090A7DA108 /* Pods_NextStep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D396760CCCDA9E20985B6CB8 /* Pods_NextStep.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,16 @@
 		44F63907271FED7700518175 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		44F63909271FEDAC00518175 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		44F6390C2720F0D700518175 /* PedometerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerModel.swift; sourceTree = "<group>"; };
+		44F6390E27223E9500518175 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4E5286A189D6677A59AE632D /* Pods-NextStep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NextStep.debug.xcconfig"; path = "Target Support Files/Pods-NextStep/Pods-NextStep.debug.xcconfig"; sourceTree = "<group>"; };
+		5E55F87D7E22E858BB46BBE6 /* Pods-NextStep-NextStepUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NextStep-NextStepUITests.release.xcconfig"; path = "Target Support Files/Pods-NextStep-NextStepUITests/Pods-NextStep-NextStepUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7530E601B8575462153C8FEF /* Pods-NextStep-NextStepUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NextStep-NextStepUITests.debug.xcconfig"; path = "Target Support Files/Pods-NextStep-NextStepUITests/Pods-NextStep-NextStepUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7E6943502D6CC15EF38712F8 /* Pods_NextStepTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NextStepTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8058DEA4D9DA66087C6733E3 /* Pods_NextStep_NextStepUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NextStep_NextStepUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A493B2932C6499749BFE909D /* Pods-NextStep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NextStep.release.xcconfig"; path = "Target Support Files/Pods-NextStep/Pods-NextStep.release.xcconfig"; sourceTree = "<group>"; };
+		AAB3E2AF840B9D6B08581671 /* Pods-NextStepTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NextStepTests.debug.xcconfig"; path = "Target Support Files/Pods-NextStepTests/Pods-NextStepTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C2C978AC44244AB253FCD8DE /* Pods-NextStepTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NextStepTests.release.xcconfig"; path = "Target Support Files/Pods-NextStepTests/Pods-NextStepTests.release.xcconfig"; sourceTree = "<group>"; };
+		D396760CCCDA9E20985B6CB8 /* Pods_NextStep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NextStep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF1B7BFB7EE496090A7DA108 /* Pods_NextStep.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2BE9F2ED15CA8E61A20BCA /* Pods_NextStepTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D5C20227767FF70DCA4058D /* Pods_NextStep_NextStepUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +122,8 @@
 				44B18F7D271FA5F00061DD54 /* NextStepTests */,
 				44B18F88271FA5F00061DD54 /* NextStepUITests */,
 				44B18F65271FA5EF0061DD54 /* Products */,
+				E309CC9500DF4352B51B4141 /* Pods */,
+				FC64367ACC0BFC236625B591 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +146,7 @@
 				44B18F6B271FA5F00061DD54 /* Assets.xcassets */,
 				44B18F70271FA5F00061DD54 /* Persistence.swift */,
 				44B18F75271FA5F00061DD54 /* Info.plist */,
+				44F6390E27223E9500518175 /* GoogleService-Info.plist */,
 				44B18F72271FA5F00061DD54 /* NextStep.xcdatamodeld */,
 				44B18F6D271FA5F00061DD54 /* Preview Content */,
 			);
@@ -167,6 +187,30 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E309CC9500DF4352B51B4141 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E5286A189D6677A59AE632D /* Pods-NextStep.debug.xcconfig */,
+				A493B2932C6499749BFE909D /* Pods-NextStep.release.xcconfig */,
+				7530E601B8575462153C8FEF /* Pods-NextStep-NextStepUITests.debug.xcconfig */,
+				5E55F87D7E22E858BB46BBE6 /* Pods-NextStep-NextStepUITests.release.xcconfig */,
+				AAB3E2AF840B9D6B08581671 /* Pods-NextStepTests.debug.xcconfig */,
+				C2C978AC44244AB253FCD8DE /* Pods-NextStepTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FC64367ACC0BFC236625B591 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D396760CCCDA9E20985B6CB8 /* Pods_NextStep.framework */,
+				8058DEA4D9DA66087C6733E3 /* Pods_NextStep_NextStepUITests.framework */,
+				7E6943502D6CC15EF38712F8 /* Pods_NextStepTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,9 +218,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44B18F8E271FA5F00061DD54 /* Build configuration list for PBXNativeTarget "NextStep" */;
 			buildPhases = (
+				679F68F7553E883A4AC49F3A /* [CP] Check Pods Manifest.lock */,
 				44B18F60271FA5EF0061DD54 /* Sources */,
 				44B18F61271FA5EF0061DD54 /* Frameworks */,
 				44B18F62271FA5EF0061DD54 /* Resources */,
+				B5EA77CDF69617D48FC344C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,6 +237,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44B18F91271FA5F00061DD54 /* Build configuration list for PBXNativeTarget "NextStepTests" */;
 			buildPhases = (
+				1379E1834C76CA32686B347F /* [CP] Check Pods Manifest.lock */,
 				44B18F76271FA5F00061DD54 /* Sources */,
 				44B18F77271FA5F00061DD54 /* Frameworks */,
 				44B18F78271FA5F00061DD54 /* Resources */,
@@ -209,9 +256,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44B18F94271FA5F00061DD54 /* Build configuration list for PBXNativeTarget "NextStepUITests" */;
 			buildPhases = (
+				0984209FAF8DC4D80A66E183 /* [CP] Check Pods Manifest.lock */,
 				44B18F81271FA5F00061DD54 /* Sources */,
 				44B18F82271FA5F00061DD54 /* Frameworks */,
 				44B18F83271FA5F00061DD54 /* Resources */,
+				C66A935F5960E0C8622E65A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -272,6 +321,7 @@
 			files = (
 				44B18F6F271FA5F00061DD54 /* Preview Assets.xcassets in Resources */,
 				44B18F6C271FA5F00061DD54 /* Assets.xcassets in Resources */,
+				44F6390F27223E9600518175 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +340,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0984209FAF8DC4D80A66E183 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NextStep-NextStepUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1379E1834C76CA32686B347F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NextStepTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		679F68F7553E883A4AC49F3A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NextStep-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5EA77CDF69617D48FC344C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NextStep/Pods-NextStep-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NextStep/Pods-NextStep-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NextStep/Pods-NextStep-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C66A935F5960E0C8622E65A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NextStep-NextStepUITests/Pods-NextStep-NextStepUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NextStep-NextStepUITests/Pods-NextStep-NextStepUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NextStep-NextStepUITests/Pods-NextStep-NextStepUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		44B18F60271FA5EF0061DD54 /* Sources */ = {
@@ -458,6 +611,7 @@
 		};
 		44B18F8F271FA5F00061DD54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E5286A189D6677A59AE632D /* Pods-NextStep.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -480,6 +634,7 @@
 		};
 		44B18F90271FA5F00061DD54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A493B2932C6499749BFE909D /* Pods-NextStep.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -502,6 +657,7 @@
 		};
 		44B18F92271FA5F00061DD54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAB3E2AF840B9D6B08581671 /* Pods-NextStepTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -524,6 +680,7 @@
 		};
 		44B18F93271FA5F00061DD54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2C978AC44244AB253FCD8DE /* Pods-NextStepTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -546,6 +703,7 @@
 		};
 		44B18F95271FA5F00061DD54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7530E601B8575462153C8FEF /* Pods-NextStep-NextStepUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -566,6 +724,7 @@
 		};
 		44B18F96271FA5F00061DD54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E55F87D7E22E858BB46BBE6 /* Pods-NextStep-NextStepUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

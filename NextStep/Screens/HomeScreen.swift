@@ -107,7 +107,6 @@ struct HomeScreen: View {
     
     // VIEW
     var body: some View {
-        
         VStack {
             VStack {
 
@@ -234,7 +233,7 @@ struct CardLarge: View {
                             .fontWeight(.black)
                             .foregroundColor(Color(secondary_colour))
                         Text(description)
-                            .font(.system(size: 35))
+                            .font(.system(size: 40))
                             .fontWeight(.bold)
                             .foregroundColor(Color.white)
                     }.padding(10)
@@ -277,7 +276,7 @@ struct CardSmall: View {
                         .foregroundColor(Color(secondary_colour))
 
                     Text(description)
-                        .font(.system(size: 20))
+                        .font(.system(size: 25))
                         .fontWeight(.bold)
                         .foregroundColor(Color.white)
 

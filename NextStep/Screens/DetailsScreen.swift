@@ -70,7 +70,6 @@ struct DetailsScreen: View {
                     
                     Text(value_today)
                         .font(.system(size: 50))
-                        .fontWeight(.bold)
                         .foregroundColor(Color(primary_colour))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
@@ -118,7 +117,6 @@ struct DetailsScreen: View {
                     
                     Text(value_week)
                         .font(.system(size: 50))
-                        .fontWeight(.bold)
                         .foregroundColor(Color(primary_colour))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))

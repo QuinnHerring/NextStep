@@ -27,6 +27,8 @@ struct ProfileScreen: View {
     @State private var selectedIndex = 0
     
     @FocusState private var nameIsFocused: Bool
+    @State private var showingInputAlert = false
+    @State private var showingClearAlert = false
     
     var body: some View {
         VStack {
@@ -72,13 +74,29 @@ struct ProfileScreen: View {
                     .keyboardType(.numberPad)
                 }
                 
-                Button {
-                    print("Button pressed")
-                } label: {
-                    Text("Press Me")
-                        .padding(20)
+                Section {
+                    Button(action: {
+                        if (firstName.count == 0 ||
+                            lastName.count == 0 ||
+                            age.count == 0 ||
+                            weight.count == 0 ||
+                            height.count == 0)
+                            {
+                            showingInputAlert = true
+                        } else {
+                            print("Updating...")
+                        }
+                        
+                    }, label: {
+                        Text("Save Details")
+                    })
+                    .padding(.trailing)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .alert("Please fill in remaining details", isPresented: $showingInputAlert) {
+                                    Button("OK", role: .cancel) { }
+                                }
+                    
                 }
-                .frame(maxWidth: .infinity, alignment: .center)
                 
             }
             
@@ -86,21 +104,21 @@ struct ProfileScreen: View {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     
                     Button(action: {
-                        print("HEY")
-                        if (firstName.count == 0 ||
-                            lastName.count == 0 ||
-                            age.count == 0 ||
-                            weight.count == 0 ||
-                            height.count == 0)
-                            {
-                            print("HEY")
-                        }
-                        
+                            showingClearAlert = true
                     }, label: {
                         Text("Clear")
-                    }).padding(.trailing)
-                    
-                    
+                    })
+                    .padding(.trailing)
+                    .alert(isPresented: $showingClearAlert) {
+                        Alert(
+                            title: Text("Clearing Profile"),
+                            message: Text("Are you sure?"),
+                            primaryButton: .default(Text("Okay")) {
+                                print("Clearing...")
+                            },
+                            secondaryButton: .destructive(Text("Cancel"))
+                        )
+                    }
                 }
             }
         }
