@@ -10,6 +10,7 @@
 		1D5C20227767FF70DCA4058D /* Pods_NextStep_NextStepUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8058DEA4D9DA66087C6733E3 /* Pods_NextStep_NextStepUITests.framework */; };
 		2C2BE9F2ED15CA8E61A20BCA /* Pods_NextStepTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6943502D6CC15EF38712F8 /* Pods_NextStepTests.framework */; };
 		445AC3F5271FC3E6007E8397 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445AC3F4271FC3E6007E8397 /* HomeScreen.swift */; };
+		4493F3B02726285D00B0620F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4493F3AF2726285D00B0620F /* ProfileViewModel.swift */; };
 		44B18F68271FA5EF0061DD54 /* NextStepApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B18F67271FA5EF0061DD54 /* NextStepApp.swift */; };
 		44B18F6A271FA5EF0061DD54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B18F69271FA5EF0061DD54 /* ContentView.swift */; };
 		44B18F6C271FA5F00061DD54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44B18F6B271FA5F00061DD54 /* Assets.xcassets */; };
@@ -19,11 +20,12 @@
 		44B18F7F271FA5F00061DD54 /* NextStepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B18F7E271FA5F00061DD54 /* NextStepTests.swift */; };
 		44B18F8A271FA5F00061DD54 /* NextStepUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B18F89271FA5F00061DD54 /* NextStepUITests.swift */; };
 		44F63906271FE27A00518175 /* DetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F63905271FE27A00518175 /* DetailsScreen.swift */; };
-		44F63908271FED7700518175 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F63907271FED7700518175 /* ProfileScreen.swift */; };
+		44F63908271FED7700518175 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F63907271FED7700518175 /* ProfileView.swift */; };
 		44F6390A271FEDAC00518175 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F63909271FEDAC00518175 /* SettingsScreen.swift */; };
 		44F6390D2720F0D700518175 /* PedometerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F6390C2720F0D700518175 /* PedometerModel.swift */; };
 		44F6390F27223E9600518175 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44F6390E27223E9500518175 /* GoogleService-Info.plist */; };
 		44F639112722725F00518175 /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F639102722725E00518175 /* FirebaseModel.swift */; };
+		44F639132726273800518175 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F639122726273700518175 /* Profile.swift */; };
 		DF1B7BFB7EE496090A7DA108 /* Pods_NextStep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D396760CCCDA9E20985B6CB8 /* Pods_NextStep.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		445AC3F4271FC3E6007E8397 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		4493F3AF2726285D00B0620F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		44B18F64271FA5EF0061DD54 /* NextStep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextStep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44B18F67271FA5EF0061DD54 /* NextStepApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStepApp.swift; sourceTree = "<group>"; };
 		44B18F69271FA5EF0061DD54 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,11 +64,12 @@
 		44B18F89271FA5F00061DD54 /* NextStepUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStepUITests.swift; sourceTree = "<group>"; };
 		44B18F8B271FA5F00061DD54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44F63905271FE27A00518175 /* DetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreen.swift; sourceTree = "<group>"; };
-		44F63907271FED7700518175 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		44F63907271FED7700518175 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		44F63909271FEDAC00518175 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		44F6390C2720F0D700518175 /* PedometerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerModel.swift; sourceTree = "<group>"; };
 		44F6390E27223E9500518175 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		44F639102722725E00518175 /* FirebaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
+		44F639122726273700518175 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		4E5286A189D6677A59AE632D /* Pods-NextStep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NextStep.debug.xcconfig"; path = "Target Support Files/Pods-NextStep/Pods-NextStep.debug.xcconfig"; sourceTree = "<group>"; };
 		5E55F87D7E22E858BB46BBE6 /* Pods-NextStep-NextStepUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NextStep-NextStepUITests.release.xcconfig"; path = "Target Support Files/Pods-NextStep-NextStepUITests/Pods-NextStep-NextStepUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7530E601B8575462153C8FEF /* Pods-NextStep-NextStepUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NextStep-NextStepUITests.debug.xcconfig"; path = "Target Support Files/Pods-NextStep-NextStepUITests/Pods-NextStep-NextStepUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,16 +109,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		445AC3F3271FC3D1007E8397 /* Screens */ = {
+		445AC3F3271FC3D1007E8397 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4493F3AD2726283400B0620F /* ProfileView */,
 				44B18F69271FA5EF0061DD54 /* ContentView.swift */,
-				44F63907271FED7700518175 /* ProfileScreen.swift */,
 				44F63909271FEDAC00518175 /* SettingsScreen.swift */,
 				445AC3F4271FC3E6007E8397 /* HomeScreen.swift */,
 				44F63905271FE27A00518175 /* DetailsScreen.swift */,
 			);
-			path = Screens;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4493F3AD2726283400B0620F /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				44F63907271FED7700518175 /* ProfileView.swift */,
+				4493F3AF2726285D00B0620F /* ProfileViewModel.swift */,
+			);
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 		44B18F5B271FA5EF0061DD54 = {
@@ -143,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				44F6390B2720F0BA00518175 /* Models */,
-				445AC3F3271FC3D1007E8397 /* Screens */,
+				445AC3F3271FC3D1007E8397 /* Views */,
 				44B18F67271FA5EF0061DD54 /* NextStepApp.swift */,
 				44B18F6B271FA5F00061DD54 /* Assets.xcassets */,
 				44B18F70271FA5F00061DD54 /* Persistence.swift */,
@@ -186,6 +199,7 @@
 			children = (
 				44F6390C2720F0D700518175 /* PedometerModel.swift */,
 				44F639102722725E00518175 /* FirebaseModel.swift */,
+				44F639122726273700518175 /* Profile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -454,11 +468,13 @@
 				44F6390D2720F0D700518175 /* PedometerModel.swift in Sources */,
 				44F6390A271FEDAC00518175 /* SettingsScreen.swift in Sources */,
 				44B18F74271FA5F00061DD54 /* NextStep.xcdatamodeld in Sources */,
-				44F63908271FED7700518175 /* ProfileScreen.swift in Sources */,
+				44F63908271FED7700518175 /* ProfileView.swift in Sources */,
 				44F639112722725F00518175 /* FirebaseModel.swift in Sources */,
 				445AC3F5271FC3E6007E8397 /* HomeScreen.swift in Sources */,
+				4493F3B02726285D00B0620F /* ProfileViewModel.swift in Sources */,
 				44F63906271FE27A00518175 /* DetailsScreen.swift in Sources */,
 				44B18F71271FA5F00061DD54 /* Persistence.swift in Sources */,
+				44F639132726273800518175 /* Profile.swift in Sources */,
 				44B18F6A271FA5EF0061DD54 /* ContentView.swift in Sources */,
 				44B18F68271FA5EF0061DD54 /* NextStepApp.swift in Sources */,
 			);

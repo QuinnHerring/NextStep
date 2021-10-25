@@ -12,13 +12,7 @@ import SwiftUI
 
 struct ProfileScreen: View {
     
-    @ObservedObject var database = FirebaseModel()
-    
-    @State var firstName = ""
-    @State var lastName = ""
-    @State var age = ""
-    @State var height = ""
-    @State var weight = ""
+    @StateObject private var viewModel = ProfileViewModel()
     
     private var genderArray = ["Male", "Female", "Other"]
     @State private var selectedGender = "Male"
@@ -30,67 +24,6 @@ struct ProfileScreen: View {
     @State private var showingClearAlert = false
     @State private var showingUpdateAlert = false
     
-    func readProfile() {
-        
-        var ref: DatabaseReference!
-        ref = Database.database().reference()
-        
-        // Read First Name
-        ref.child("Profile/firstName").getData(completion:  { error, snapshot in
-              guard error == nil else {
-                print(error!.localizedDescription)
-                return;
-              }
-            
-            firstName = snapshot.value as? String ?? "";
-        });
-        
-        // Read Last Name
-        ref.child("Profile/lastName").getData(completion:  { error, snapshot in
-              guard error == nil else {
-                print(error!.localizedDescription)
-                return;
-              }
-            lastName = snapshot.value as? String ?? "";
-        });
-        
-        // Read Age
-        ref.child("Profile/age").getData(completion:  { error, snapshot in
-              guard error == nil else {
-                print(error!.localizedDescription)
-                return;
-              }
-            age = snapshot.value as? String ?? "";
-        });
-        
-        // Read Gender
-        ref.child("Profile/gender").getData(completion:  { error, snapshot in
-              guard error == nil else {
-                print(error!.localizedDescription)
-                return;
-              }
-            selectedGender = snapshot.value as? String ?? "";
-        });
-        
-        // Read Height
-        ref.child("Profile/height").getData(completion:  { error, snapshot in
-              guard error == nil else {
-                print(error!.localizedDescription)
-                return;
-              }
-            height = snapshot.value as? String ?? "";
-        });
-        
-        // Read Weight
-        ref.child("Profile/weight").getData(completion:  { error, snapshot in
-              guard error == nil else {
-                print(error!.localizedDescription)
-                return;
-              }
-            weight = snapshot.value as? String ?? "";
-        });
-    }
-    
     var body: some View {
         VStack {
             
@@ -100,15 +33,15 @@ struct ProfileScreen: View {
                 Section(header: Text("Personal Info")) {
                     
                     // First Name Input
-                    TextField("First Name", text: $firstName)
+                    TextField("First Name", text: $viewModel.profile.firstName)
                         .focused($nameIsFocused)
                     
                     // Last Name Input
-                    TextField("Last Name", text: $lastName)
+                    TextField("Last Name", text: $viewModel.profile.lastName)
                         .focused($nameIsFocused)
                     
                     // Age Input
-                    TextField("Age", text: $age)
+                    TextField("Age", text: $viewModel.profile.age)
                         .focused($nameIsFocused)
                         .textContentType(.oneTimeCode)
                         .keyboardType(.numberPad)
@@ -117,7 +50,7 @@ struct ProfileScreen: View {
                 // Gender Section
                 Section(header: Text("Gender")) {
                     // Gender Input
-                    Picker(selection: $selectedGender, label: Text("Gender")) {
+                    Picker(selection: $viewModel.profile.gender, label: Text("Gender")) {
                         ForEach(genderArray, id: \.self) {
                             Text($0)
                         }
@@ -132,13 +65,13 @@ struct ProfileScreen: View {
                 Section(header: Text("Body Info")) {
                     
                     // Height Input
-                    TextField("Height", text: $height)
+                    TextField("Height", text: $viewModel.profile.height)
                     .focused($nameIsFocused)
                     .textContentType(.oneTimeCode)
                     .keyboardType(.numberPad)
                     
                     // Weight Input
-                    TextField("Weight", text: $weight)
+                    TextField("Weight", text: $viewModel.profile.weight)
                     .focused($nameIsFocused)
                     .textContentType(.oneTimeCode)
                     .keyboardType(.numberPad)
@@ -153,11 +86,11 @@ struct ProfileScreen: View {
                         nameIsFocused = false
                         
                         // Check if all details are filled out
-                        if (firstName.count == 0 ||
-                            lastName.count == 0 ||
-                            age.count == 0 ||
-                            weight.count == 0 ||
-                            height.count == 0)
+                        if (viewModel.profile.firstName.count == 0 ||
+                            viewModel.profile.lastName.count == 0 ||
+                            viewModel.profile.age.count == 0 ||
+                            viewModel.profile.weight.count == 0 ||
+                            viewModel.profile.height.count == 0)
                             {
                             // if one detail is empty
                             showingInputAlert = true
@@ -178,15 +111,7 @@ struct ProfileScreen: View {
                             message: Text("Are you sure?"),
                             primaryButton: .destructive(Text("Cancel")),
                             secondaryButton: .default(Text("Update")) {
-                                
-                                self.database.updateProfile(
-                                    in_firstName: firstName,
-                                    in_lastName: lastName,
-                                    in_age: age,
-                                    in_selectedGender: selectedGender,
-                                    in_height: height,
-                                    in_weight: weight
-                                )
+                                viewModel.updateProfile()
                             }
                         )
                     }
@@ -205,13 +130,7 @@ struct ProfileScreen: View {
                             message: Text("Are you sure?"),
                             primaryButton: .default(Text("Cancel")),
                             secondaryButton: .destructive(Text("Clear")) {
-                                self.database.clearProfile()
-                                firstName = ""
-                                lastName = ""
-                                age = ""
-                                selectedGender = "Male"
-                                height = ""
-                                weight = ""
+                                viewModel.clearProfile()
                             }
                         )
                     }
@@ -220,11 +139,7 @@ struct ProfileScreen: View {
             }
         }
         .onAppear {
-            print("Appearing")
-            readProfile()
-            //firstName = self.database.getFirstName()
-            
-            print("First Name: " + firstName)
+            viewModel.readProfile()
         }
         .navigationTitle("Profile")
     }
