@@ -11,11 +11,7 @@ import FirebaseDatabase
 
 final class ProfileViewModel: ObservableObject {
     
-    @Published var database = FirebaseModel()
-    
     @Published var profile = Profile(firstName: "", lastName: "", age: "", gender: "", height: "", weight: "")
-    
-    
     
     // Read Data from Database
     func readProfile() {
@@ -29,7 +25,6 @@ final class ProfileViewModel: ObservableObject {
                 print(error!.localizedDescription)
                 return;
               }
-            
             self.profile.firstName = snapshot.value as? String ?? "";
         });
         

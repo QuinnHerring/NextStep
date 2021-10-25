@@ -116,7 +116,6 @@ struct ProfileScreen: View {
                         )
                     }
                     
-                    
                     // Clear Button
                     Button(action: {
                         nameIsFocused = false

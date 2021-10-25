@@ -26,6 +26,7 @@ struct DetailsScreen: View {
     
     var body: some View {
         
+        // Data period picker
         VStack {
             Picker("", selection: $timePeriodType) {
                 ForEach(TimePeriodType.allCases, id: \.self) {
@@ -43,6 +44,7 @@ struct DetailsScreen: View {
                 switch timePeriodType {
                 case .today:
                     
+                    // Date section
                     Text("Today")
                         .font(.system(size: 20))
                         .fontWeight(.bold)
@@ -61,6 +63,7 @@ struct DetailsScreen: View {
                     
                     Divider()
                     
+                    // Data section
                     Text(secondary_title)
                         .font(.system(size: 20))
                         .fontWeight(.bold)
@@ -83,6 +86,7 @@ struct DetailsScreen: View {
                     
                 case .week:
                     
+                    // Date section
                     Text("Between")
                         .font(.system(size: 20))
                         .fontWeight(.bold)
@@ -108,6 +112,7 @@ struct DetailsScreen: View {
                     
                     Divider()
                     
+                    // Data section
                     Text(secondary_title)
                         .font(.system(size: 20))
                         .fontWeight(.bold)

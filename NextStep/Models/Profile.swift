@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Structure holding profile data
 struct Profile {
     
     var firstName: String
